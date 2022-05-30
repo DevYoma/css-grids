@@ -1,7 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 body{
-    margin: 30px;
+    margin: 0px;
     font-family: "Poppins";
     background: #f7f7f7;
+}
+
+header{
+    background: white;
+    padding: 10px;
+}
+
+nav{
+    max-width: 1400px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    /* border: 1px solid red; */
+}
+
+nav a{
+    text-decoration: none;
+    color: #333;
+}
+
+nav h1{
+    text-transform: uppercase;
+    line-height: 1em;
+} 
+
+nav h1 div:first-child{
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+nav h1 div:last-child{
+    font-weight: 400;
+}
+
+/* MAIN */
+main{
+    max-width: 1200px;
+    margin: 60px auto;
+    /* border: 2px dashed orange; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 250px); */
+    /* grid-auto-rows => when we dont know the no of rows we are going to have */
+    grid-auto-rows: 250px;
+    gap: 30px;
+}
+
+main div{
+    overflow: hidden;
+    background: white;
+    border-radius: 6px;
+    border: 16px solid white;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .short{
+    /* we dont need to set this explicitly  */
+    grid-row: span 1; 
+}
+
+main .tall{
+    grid-row: span 2;
+}
+
+@media screen and (max-width: 960px) {
+    main{ 
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 620px){
+    main{
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    nav{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    nav h1{
+        grid-column: 1 / span 4; 
+        grid-row: 1;
+    }
 }
