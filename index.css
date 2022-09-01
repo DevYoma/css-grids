@@ -3,6 +3,7 @@
 body{
     margin: 30px;
     font-family: "Poppins";
+    background: red;
 }
 
 .grid-container{
